@@ -1,70 +1,122 @@
-# Getting Started with Create React App
+# Frontend Mentor - Tip calculator app solution
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a solution to the [Tip calculator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/tip-calculator-app-ugJNGbJUX). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-## Available Scripts
+## Table of contents
 
-In the project directory, you can run:
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
 
-### `npm start`
+## Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### The challenge
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Users should be able to:
 
-### `npm test`
+- View the optimal layout for the app depending on their device's screen size
+- See hover states for all interactive elements on the page
+- Calculate the correct tip and total cost of the bill per person
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Screenshot
 
-### `npm run build`
+![Tip Calculator App](./screenshots/tip-calculator-app.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Links
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Live Site URL: [Demo](https://phenomenal-gaufre-05dd12.netlify.app)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## My process
 
-### `npm run eject`
+### Built with
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- CSS Grid
+- [React](https://reactjs.org/) - JS library
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### What I learned
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+I implemented a 3-column responsive grid layout for tip buttons using CSS Grid that adapts seamlessly across device sizes. Using custom CSS saved development time while providing ideal spacing/alignment as we expand the number of buttons.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+```css
+.Buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The NumberInput component demonstrates reusable React components. Key learnings:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Accepts props like title, placeholder, icon to customize rendering
+Handles errors by conditionally applying "error" CSS class
+Uses CSS Modules for component-scoped styling
+Destructures props for readability and spreads rest to input
+Allows hooking into events/callbacks passed via props
+In summary, this component shows best practices like:
 
-### Code Splitting
+Reusability through customization via props
+Local state management and styling
+Input validation and error handling
+Proper use of ES6 features like destructuring
+Event handling through callbacks
+These learnings can facilitate building reusable input components in React. The component encapsulates complex logic behind a clean interface
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```js
+import React from "react";
+import "./NumberInput.css";
 
-### Analyzing the Bundle Size
+const NumberInput = ({
+  title,
+  placeholder,
+  icon,
+  error,
+  ...otherProps
+}) => {
+  return (
+    <div className="number-input">
+      <div className="title-container">
+        <label htmlFor="number-input" className="title"> {title} </label>
+        <label htmlFor="number-input" className="error"> {error} </label>
+      </div>
+      <div className="input-container">
+        <img src={icon} alt="icon" width={13} />
+        <input
+          type="number"
+          placeholder={placeholder}
+          className={`number-input-field ${error ? "error" : ""}`}
+          min={0}
+          {...otherProps}
+        />
+      </div>
+    </div>
+  );
+};
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+export default NumberInput;
 
-### Making a Progressive Web App
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Continued development
 
-### Advanced Configuration
+While I feel comfortable with React fundamentals, there are some more advanced capabilities I aim to refine in upcoming projects. Specifically, I want to enhance my CSS skills in order to create visually polished React applications. Learning CSS frameworks like Tailwind could simplify style encapsulation and customization. Additionally, implementing animations and transitions would elevate interactivity. React Spring is a useful library to achieve such layering on top of React components. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Useful resources
 
-### Deployment
+- [A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) - The Complete Guide to Flexbox, provided by CSS-Tricks, offers a comprehensive resource for understanding and using the Flexbox layout module.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Author
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- GitHub - [@emazaheri](https://github.com/emazaheri)
+- Frontend Mentor - [@emazaheri](https://www.frontendmentor.io/profile/emazaheri)
+- LinkedIn - [@emazaheri](https://www.linkedin.com/in/emazaheri/)
