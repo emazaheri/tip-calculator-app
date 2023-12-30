@@ -52,7 +52,7 @@ function TipButtons({ tip, setTip }) {
           max={100}
           className="Custom"
           placeholder="Custom"
-          value={tip}
+          value={tip === 0 ? "" : tip}
           onChange={handleCustomTip}
         />
       </div>
