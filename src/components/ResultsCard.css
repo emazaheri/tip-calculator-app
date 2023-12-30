@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: hsl(183, 100%, 15%);
+  background-color: var(--very-dark-cyan);
   border-radius: 1rem;
   padding: 40px;
 }
@@ -23,18 +23,18 @@
 
 .Result-title {
   font-size: 13px;
-  color: hsl(189, 41%, 97%);
+  color: var(--very-light-grayish-cyan);
 }
 
 .Result-subtitle {
   font-size: 13px;
-  color: hsl(184, 14%, 56%);
+  color: var(--grayish-cyan);
 }
 
 .Amount-value {
   font-size: 36px;
   font-weight: 700;
-  color: hsl(172, 67%, 45%);
+  color: var(--strong-cyan);
 }
 
 .Reset-button {
@@ -45,15 +45,15 @@
   font-size: 1.5rem;
   font-weight: 700;
   text-align: center;
-  color: hsl(183, 100%, 15%);
-  background-color: hsl(172, 67%, 45%);
+  color: var(--very-dark-cyan);
+  background-color: var(--strong-cyan);
 }
 
 .Reset-button:hover {
-  background-color: hsl(185, 41%, 84%);
+  background-color: var(--light-grayish-cyan);
 }
 
 .Reset-button:disabled {
-  background-color:  hsl(185, 41%, 84%);
+  background-color:  var(--light-grayish-cyan);
   opacity: 0.15;
 }

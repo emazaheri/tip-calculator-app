@@ -15,11 +15,11 @@ input::-webkit-inner-spin-button {
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 5px;
-  color: hsl(0, 0%, 52%);
+  color: var(--dark-grayish-cyan);
 }
 
 .error {
-  color: hsl(0, 100%, 63%);
+  color: red;
 }
 
 .input-container {
@@ -43,23 +43,23 @@ input::-webkit-inner-spin-button {
   font-size: 1.5rem;
   font-weight: 700;
   padding-right: 10px;
-  color: hsl(183, 100%, 15%);
-  background-color: hsl(189, 41%, 97%);
+  color: var(--very-dark-cyan);
+  background-color: var(--very-light-grayish-cyan);
 }
 
 .number-input-field:focus {
-  outline: 3px solid hsl(172, 67%, 45%);
-  color: hsl(183, 100%, 15%);
+  outline: 3px solid var(--strong-cyan);
+  color: var(--very-dark-cyan);
 }
 
 .number-input-field:hover {
-  outline: 3px solid hsl(172, 67%, 45%);
+  outline: 3px solid var(--strong-cyan);
 }
 
 .number-input-field:not(:focus) {
-  color: hsl(183, 100%, 15%);
+  color: var(--very-dark-cyan);
 }
 
 .number-input-field.error {
-  border: 3px solid hsl(0, 100%, 63%);
+  border: 3px solid red;
 }
