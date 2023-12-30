@@ -46,13 +46,14 @@
   font-weight: 700;
   text-align: center;
   color: hsl(183, 100%, 15%);
-  background-color: hsl(189, 41%, 97%);
-}
-
-.Reset-button:hover {
   background-color: hsl(172, 67%, 45%);
 }
 
+.Reset-button:hover {
+  background-color: hsl(185, 41%, 84%);
+}
+
 .Reset-button:disabled {
-  opacity: 0.25;
+  background-color:  hsl(185, 41%, 84%);
+  opacity: 0.15;
 }
