@@ -1,5 +1,7 @@
 import { useState } from "react";
 import NumberInput from "./components/NumberInput";
+import TipButtons from "./components/TipButtons";
+import ResultsCard from "./components/ResultsCard";
 import logo from "./assets/images/logo.svg";
 import dollar from "./assets/images/icon-dollar.svg";
 import person from "./assets/images/icon-person.svg";
@@ -8,6 +10,7 @@ import "./App.css";
 function App() {
   const [bill, setBill] = useState(0);
   const [numPeople, setNumPeople] = useState(0);
+  const [tip, setTip] = useState(0);
   const [error, setError] = useState("");
 
   const handleBillChange = (e) => {
@@ -31,6 +34,13 @@ function App() {
     }
   };
 
+  const reset = () => {
+    setBill(0);
+    setNumPeople(0);
+    setTip(0);
+    setError("");
+  };
+
   return (
     <div className="App">
       <header className="App-header">
@@ -44,6 +54,7 @@ function App() {
               value={bill.toString()}
               onChange={handleBillChange}
             />
+            <TipButtons tip={tip} setTip={setTip} />
             <NumberInput
               title="Number of People"
               placeholder="0"
@@ -54,8 +65,13 @@ function App() {
               onBlur={validateNumPeople}
             />
           </div>
-          <Card className="Cyan"></Card>
-        </Card>
+          <ResultsCard
+            bill={bill}
+            tip={tip}
+            numPeople={numPeople}
+            reset={reset}
+          />
+        </div>
       </header>
     </div>
   );
