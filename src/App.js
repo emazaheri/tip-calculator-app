@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Card from "./components/Card";
 import NumberInput from "./components/NumberInput";
 import logo from "./assets/images/logo.svg";
 import dollar from "./assets/images/icon-dollar.svg";
@@ -36,7 +35,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <Card contClassName="Horizontal">
+        <div className="Card">
           <div className="Input-section">
             <NumberInput
               title="Bill"

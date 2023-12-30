@@ -1,4 +1,3 @@
-import Card from "./Card";
 import "./ResultsCard.css";
 
 const ResultsCard = ({ bill, tip, numPeople, reset }) => {
